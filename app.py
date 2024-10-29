@@ -65,11 +65,12 @@ async def encrypt(files: list):
         ciphertext.close()
 
         # file is encrypted, ready to push to ipfs
-        print(f"sending {ciphertext.name} to ipfs (id:{ ipfs_api.my_id() })")
+        print(f"sending {ciphertext.name} to ipfs (agent id:{ ipfs_api.my_id() })")
 
         # Connecting to local Kubo node (go-ipfs, flatpak app, etc)
 
         cid = ipfs_api.publish(ciphertext.name)
+        print(f"stored to ipfs cid {cid}")
         payload = {
             "cid": cid,
             "filename": os.path.basename(filename),
@@ -102,7 +103,7 @@ async def encrypt(files: list):
 
         print(f"The secret is stored at store_id: {store_id}")
 
-        ciphertext.delete()
+        os.remove(ciphertext.name)
         plaintext.close()
 
 
