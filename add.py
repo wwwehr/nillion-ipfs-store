@@ -77,13 +77,13 @@ async def encrypt(files: list):
             "size": os.path.getsize(filename),
             "key": base64.b64encode(key).decode(),
             "sig": base64.b64encode(sig).decode(),
+            "iv": base64.b64encode(enc.iv).decode(),
+            "tag": base64.b64encode(enc.tag).decode(),
         }
 
         stored_secret = nillion.NadaValues(
             {
-                "secret_name": nillion.SecretBlob(
-                    bytearray(json.dumps(payload), "utf-8")
-                ),
+                "ipfs": nillion.SecretBlob(bytearray(json.dumps(payload), "utf-8")),
             }
         )
 
