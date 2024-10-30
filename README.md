@@ -1,5 +1,8 @@
 # nillion-ipfs-store
-encrypt, store file(s) to IPFS, save encryption keys to Nillion network 
+encrypt, store to IPFS, then save encryption keys to Nillion network 
+
+reference implementation for large files in Nillion.
+
 
 # prerequisites
 
@@ -38,6 +41,3 @@ $ python3 get.py 5b531834-98c2-4b13-a29f-ea658d21ba6e
     file decrypted to: [/tmp/tmp9dx5hk6r/pop-os_22.04_amd64_intel_43.iso]
 ```
 
-# Notes
-
-- Fernet does not support large files
