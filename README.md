@@ -11,6 +11,7 @@ reference implementation for large files in Nillion.
 ```shell
 pip3 install -r requirements.txt
 ```
+3. copy `.env.sample` to `.env` and customize to suit
 
 # usage
 
