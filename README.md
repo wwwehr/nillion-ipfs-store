@@ -1,5 +1,5 @@
 # nillion-ipfs-store
-encrypt, store to IPFS, then save encryption keys to Nillion network 
+encrypt, store to IPFS, then save encryption keys to Nillion nilvm network 
 
 reference implementation for large files in Nillion.
 
